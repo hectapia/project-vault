@@ -1,0 +1,26 @@
+# --- Dependencies ---
+node_modules/
+venv/
+__pycache__/
+
+# --- Database & Local Data ---
+# Crucial: Never commit the live database
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Build Artifacts (Python) ---
+build/
+dist/
+*.spec
+
+# --- Build Artifacts (Electron) ---
+release/
+backend-dist/
+
+# --- Environment Variables ---
+.env
+
+# --- OS Generated Files ---
+.DS_Store
+Thumbs.db

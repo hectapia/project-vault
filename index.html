@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Vault</title>
+    <style>
+        body { font-family: sans-serif; background: #222; color: #fff; text-align: center; padding-top: 50px; }
+        .card { background: #333; padding: 20px; border-radius: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🔐 Project Vault</h1>
+        <p>Status: <span id="status">Connecting...</span></p>
+    </div>
+
+    <script>
+        // Fetch data from Python
+        fetch('http://127.0.0.1:8000/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = data.message;
+                document.getElementById('status').style.color = '#0f0';
+            })
+            .catch(err => {
+                document.getElementById('status').innerText = "Backend Offline";
+                document.getElementById('status').style.color = 'red';
+            });
+    </script>
+</body>
+</html>

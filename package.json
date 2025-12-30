@@ -1,0 +1,31 @@
+{
+  "name": "project-vault",
+  "version": "1.0.0",
+  "description": "```\r project-vault/\r ├── package.json          # Electron Config\r ├── electron-main.js      # The \"Brain\" of Electron (starts Python)\r ├── /src\r │   ├── /ui               # React/HTML/CSS code (Frontend)\r │   └── /backend          # Python code (Backend)\r │       ├── main.py       # FastAPI/Flask entry point\r │       ├── database.py   # SQLite logic\r │       └── requirements.txt\r └── /dist                 # Where the final .exe will live\r ```",
+  "main": "electron-main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.hector.projectvault",
+    "productName": "Project Vault",
+    "win": {
+      "target": "nsis"
+    },
+    "extraResources": [
+      {
+        "from": "dist/api.exe",
+        "to": "backend-dist/api.exe"
+      }
+    ]
+  }
+}
