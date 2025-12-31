@@ -9,11 +9,14 @@ function createWindow() {
   mainWindow = new BrowserWindow({ 
     width: 1000, 
     height: 700,
+    icon: path.join(__dirname, 'icon.ico'), 
+    autoHideMenuBar: true,
     webPreferences: {
         nodeIntegration: true
     }
   });
 
+  mainWindow.setMenuBarVisibility(false);
   // POINT TO NEW UI PATH
   mainWindow.loadFile(path.join(__dirname, 'src', 'ui', 'index.html'));
 }
