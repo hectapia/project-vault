@@ -31,7 +31,7 @@ Clone the repository and enter the folder:
 ```bash
 git clone [https://github.com/your-username/project-vault.git](https://github.com/your-username/project-vault.git)
 cd project-vault
-
+```
 
 
 ### 1. The Folder Structure
